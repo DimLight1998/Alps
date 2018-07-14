@@ -22,6 +22,18 @@ export default class PlayerController extends cc.Component {
     public onLoad(): void {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.OnKeyDown, this);
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.OnKeyUp, this);
+        this.node.parent.on(cc.Node.EventType.TOUCH_START, event => {
+            let xPosition: number = (event as any).getLocationX();
+            if (xPosition < this.node.parent.width / 2) {
+                this._isMovingLeft = true;
+            } else { this._isMovingRight = true; }
+        }, this);
+        this.node.parent.on(cc.Node.EventType.TOUCH_END, event => {
+            let xPosition: number = (event as any).getLocationX();
+            if (xPosition < this.node.parent.width / 2) {
+                this._isMovingLeft = false;
+            } else { this._isMovingRight = false; }
+        }, this);
     }
 
     public update(dt: number): void {
