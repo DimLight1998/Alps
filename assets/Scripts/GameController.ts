@@ -1,4 +1,5 @@
 import PlayerController from './PlayerController';
+import { SetLastScore } from './Common';
 
 const { ccclass, property } = cc._decorator;
 
@@ -72,7 +73,7 @@ export default class GameController extends cc.Component {
     }
 
     public GameOver(): void {
-        console.log('game over!');
-        cc.director.loadScene('Main');
+        SetLastScore(this._score);
+        cc.director.loadScene('GameOver');
     }
 }

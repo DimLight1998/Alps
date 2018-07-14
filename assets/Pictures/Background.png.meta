@@ -5,7 +5,7 @@
   "wrapMode": "clamp",
   "filterMode": "bilinear",
   "subMetas": {
-    "SnowGround": {
+    "Background": {
       "ver": "1.0.3",
       "uuid": "9508932e-e2fe-4447-aed9-e9709b857ba0",
       "rawTextureUuid": "65200a6d-d347-42cb-8923-219fb6c5ebec",
