@@ -67,6 +67,9 @@
     "_components": [
       {
         "__id__": 8
+      },
+      {
+        "__id__": 9
       }
     ],
     "_prefab": null,
@@ -273,7 +276,6 @@
       "__id__": 5
     },
     "_enabled": true,
-    "VerticalSpeed": 10,
     "HorizontalSpeed": 150,
     "MaxHorizontalPosition": 320,
     "MinHorizontalPosition": -320
@@ -293,5 +295,24 @@
     },
     "_fitWidth": false,
     "_fitHeight": true
+  },
+  {
+    "__type__": "b8daeThXZ9Anp/23X6pwllz",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2
+    },
+    "_enabled": true,
+    "TreePrefab": {
+      "__uuid__": "a3e9530c-72f5-4a14-9d2e-f61d677e6356"
+    },
+    "Player": {
+      "__id__": 5
+    },
+    "PlayerVerticalSpeed": 300,
+    "MinTreeGenerationTime": 0.1,
+    "MaxTreeGenerationTime": 0.7,
+    "MaxTreeGenerationNumAtSameTime": 3
   }
 ]
