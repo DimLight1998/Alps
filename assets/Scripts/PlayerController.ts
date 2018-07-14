@@ -1,3 +1,5 @@
+import GameController from './GameController';
+
 const { ccclass, property } = cc._decorator;
 
 @ccclass
@@ -10,6 +12,9 @@ export default class PlayerController extends cc.Component {
 
     @property
     public MinHorizontalPosition: number = 0;
+
+    @property({ type: cc.Node })
+    public MainGameController: GameController = null;
 
     private _isMovingLeft: boolean;
     private _isMovingRight: boolean;
@@ -32,6 +37,10 @@ export default class PlayerController extends cc.Component {
         positionX = Math.max(this.MinHorizontalPosition, positionX);
 
         this.node.setPositionX(positionX);
+    }
+
+    public onCollisionEnter(): void {
+        (this.MainGameController.getComponent('GameController') as GameController).GameOver();
     }
 
     private OnKeyDown(event: cc.Event.EventCustom): void {
